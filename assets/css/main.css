@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Anuphan:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+.wallywoodLogo {
+  text-transform: uppercase;
+  color: #D97852;
+  font-weight: 900;
+  font-size: 34px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #5C1F06;
+}
+nav ul {
+  margin: auto 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  padding: 0 0 0 1rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  border-bottom: 1.5px solid transparent;
+}
+nav ul li a:hover {
+  border-bottom: 1.5px solid #5C1F06;
+  transition: 200ms ease-in-out;
+}
+
+@media (max-width: 1100px) {
+  nav {
+    display: block;
+  }
+  nav ul {
+    display: flex;
+  }
+  nav ul li {
+    padding: 0.5rem 0;
+    margin-right: 1rem;
+  }
+}
+.globalFooter {
+  border-top: 2px solid #5C1F06;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 0.5rem;
+}
+.globalFooter div ul {
+  padding: 0;
+  list-style: none;
+  color: #000000;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+#wallywoodLogoFooter ul li {
+  color: #D97852;
+  font-weight: 600;
+}
+
+#right {
+  margin-left: auto;
+}
+
+@media (max-width: 1100px) {
+  .globalFooter {
+    display: block;
+  }
+  .globalFooter div {
+    margin-bottom: 0.5rem;
+  }
+}
+body {
+  background-color: #5C1F06;
+  font-family: "Open Sans", sans-serif;
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.containeren {
+  background-color: #FFFFFF;
+  padding: 1rem 2rem;
+}
+
+* {
+  margin: 0;
+}/*# sourceMappingURL=main.css.map */

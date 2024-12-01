@@ -1,0 +1,37 @@
+
+.globalFooter{
+    border-top: 2px solid $bordoux-red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: .5rem;
+    div{
+
+        ul{
+            padding: 0;
+            list-style: none;
+            color: $black;
+            font-weight: 400;
+            font-size: .8rem;
+        }
+    }
+}
+
+#wallywoodLogoFooter ul li{
+    color: $orange;
+    font-weight: 600;
+}
+
+#right{
+    margin-left: auto;
+}
+
+
+  // Media Queries
+  @media (max-width: 1100px) {
+    .globalFooter{
+        display: block;
+        div{
+            margin-bottom: .5rem;
+        }
+    }
+  }

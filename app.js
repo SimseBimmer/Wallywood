@@ -1,28 +1,30 @@
 // app.js
 require('dotenv').config(); // Læs miljøvariabler fra .env
 const express = require('express');
+const path = require('path');
 const cors = require('cors'); // Middleware til at tillade CORS
-const postersRoutes = require('./routes/postersRoutes'); // Importér posters-ruter
-const genresRoutes = require('./routes/genresRoutes'); // Importér genres-ruter
+const postersRoutes = require('./routes/postersRoutes');
+const genresRoutes = require('./routes/genresRoutes');
 const userProfilesRoutes = require('./routes/userProfilesRoutes');
-const cartlinesRoutes = require('./routes/cartlinesRoutes'); // Importér cartlines-ruter
+const cartlinesRoutes = require('./routes/cartlinesRoutes');
 
 const app = express();
 
 app.use(express.json()); // Middleware til at parse JSON
 app.use(cors()); // Aktiver CORS
-app.use('/api/cartlines', cartlinesRoutes); // Brug cartlines-ruter
 
+// Serve statiske filer fra 'assets' mappen
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-// Brug posters-ruter og genres-ruter
+// Brug de rigtige routes
 app.use('/api/posters', postersRoutes);
 app.use('/api/genres', genresRoutes);
 app.use('/api/user_profiles', userProfilesRoutes);
+app.use('/api/cartlines', cartlinesRoutes);
 
-
-// Root route
+// Root route - Sender index.html filen
 app.get('/', (req, res) => {
-    res.send('Welcome to the Wallywood API!');
+    res.sendFile(path.join(__dirname, 'index.html')); // Sørger for at sende index.html
 });
 
 // Catch-all for udefinerede ruter
